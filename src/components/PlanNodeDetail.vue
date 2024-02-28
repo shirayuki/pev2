@@ -213,7 +213,7 @@ watch(activeTab, () => {
           :class="{ active: activeTab === 'general' }"
           @click.prevent.stop="activeTab = 'general'"
           href=""
-          >General</a
+          >全般</a
         >
       </li>
       <li class="nav-item">
@@ -225,7 +225,7 @@ watch(activeTab, () => {
           }"
           @click.prevent.stop="activeTab = 'iobuffer'"
           href=""
-          >IO & Buffers</a
+          >入出力 & バッファ</a
         >
       </li>
       <li class="nav-item">
@@ -237,7 +237,7 @@ watch(activeTab, () => {
           }"
           @click.prevent.stop="activeTab = 'output'"
           href=""
-          >Output</a
+          >出力</a
         >
       </li>
       <li class="nav-item">
@@ -252,7 +252,7 @@ watch(activeTab, () => {
           }"
           @click.prevent.stop="activeTab = 'workers'"
           href=""
-          >Workers</a
+          >ワーカー</a
         >
       </li>
       <li class="nav-item">
@@ -261,7 +261,7 @@ watch(activeTab, () => {
           :class="{ active: activeTab === 'misc' }"
           @click.prevent.stop="activeTab = 'misc'"
           href=""
-          >Misc</a
+          >その他</a
         >
       </li>
     </ul>
@@ -275,7 +275,7 @@ watch(activeTab, () => {
           icon="clock"
           class="text-muted"
         ></font-awesome-icon>
-        <b>Timing:</b>
+        <b>タイミング:</b>
         <span
           class="p-0 px-1 rounded alert"
           :class="durationClass"
@@ -293,12 +293,12 @@ watch(activeTab, () => {
           icon="align-justify"
           class="text-muted"
         ></font-awesome-icon>
-        <b>Rows:</b>
+        <b>行数:</b>
         <span class="px-1">{{
           tilde + formattedProp("ACTUAL_ROWS_REVISED")
         }}</span>
         <span class="text-muted" v-if="node[NodeProp.PLAN_ROWS]"
-          >(Planned: {{ tilde + formattedProp("PLAN_ROWS_REVISED") }})</span
+          >(計画: {{ tilde + formattedProp("PLAN_ROWS_REVISED") }})</span
         >
         <span
           v-if="
@@ -370,12 +370,12 @@ watch(activeTab, () => {
           icon="dollar-sign"
           class="text-muted"
         ></font-awesome-icon>
-        <b>Cost:</b>
+        <b>コスト:</b>
         <span class="p-0 px-1 me-1 alert" :class="costClass">{{
           formattedProp("EXCLUSIVE_COST")
         }}</span>
         <span class="text-muted"
-          >(Total: {{ formattedProp("TOTAL_COST") }})</span
+          >(合計: {{ formattedProp("TOTAL_COST") }})</span
         >
       </div>
       <div v-if="node[NodeProp.ACTUAL_LOOPS] > 1">
@@ -384,7 +384,7 @@ watch(activeTab, () => {
           icon="undo"
           class="text-muted"
         ></font-awesome-icon>
-        <b>Loops:</b>
+        <b>ループ:</b>
         <span class="px-1">{{ formattedProp("ACTUAL_LOOPS") }} </span>
       </div>
       <!-- general tab -->
@@ -403,19 +403,19 @@ watch(activeTab, () => {
         </dt>
         <dd class="list-inline-item">
           <span v-if="node[NodeProp.EXCLUSIVE_IO_READ_TIME]" class="ms-2">
-            <b>Read:&nbsp;</b>
+            <b>読み取り:&nbsp;</b>
             {{ formattedProp("EXCLUSIVE_IO_READ_TIME") }}
             <small>~{{ formattedProp("AVERAGE_IO_READ_TIME") }}</small>
           </span>
           <br />
           <span v-if="node[NodeProp.EXCLUSIVE_IO_WRITE_TIME]" class="ms-2">
-            <b>Write:&nbsp;</b>
+            <b>書き込み:&nbsp;</b>
             {{ formattedProp("EXCLUSIVE_IO_WRITE_TIME") }}
             <small>~{{ formattedProp("AVERAGE_IO_WRITE_TIME") }}</small>
           </span>
         </dd>
       </dl>
-      <b> Blocks: </b>
+      <b> ブロック: </b>
       <table class="table table-sm">
         <tr>
           <td></td>
@@ -531,7 +531,7 @@ watch(activeTab, () => {
         </em>
       </div>
       <div>
-        <b>Workers launched: </b>
+        <b>起動されたワーカー: </b>
         <span class="px-1">{{ workersLaunchedCount }}</span>
       </div>
       <div

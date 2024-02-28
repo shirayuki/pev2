@@ -163,7 +163,7 @@ function centerCte() {
                   'p-0  d-inline-block mb-0 ms-1 text-nowrap alert ' +
                   durationClass
                 "
-                v-tippy="'Slow'"
+                v-tippy="'低速'"
                 ><font-awesome-icon
                   fixed-width
                   icon="clock"
@@ -174,7 +174,7 @@ function centerCte() {
                 :class="
                   'p-0  d-inline-block mb-0 ms-1 text-nowrap alert ' + costClass
                 "
-                v-tippy="'Cost is high'"
+                v-tippy="'コストが高い'"
                 ><font-awesome-icon
                   fixed-width
                   icon="dollar-sign"
@@ -186,7 +186,7 @@ function centerCte() {
                   'p-0  d-inline-block mb-0 ms-1 text-nowrap alert ' +
                   estimationClass
                 "
-                v-tippy="'Bad estimation for number of rows'"
+                v-tippy="'行数の見積もりが悪い'"
                 ><font-awesome-icon
                   fixed-width
                   icon="thumbs-down"
@@ -213,7 +213,7 @@ function centerCte() {
                 "
                 v-tippy="{
                   arrow: true,
-                  content: 'Heap Fetches number is high',
+                  content: 'ヒープ フェッチの回数が多い',
                 }"
               >
                 <font-awesome-icon

@@ -14,17 +14,17 @@ export enum BufferLocation {
 }
 
 export enum BufferType {
-  hit = "Hit",
-  read = "Read",
-  written = "Written",
+  hit = "ヒット",
+  read = "読み取り済",
+  written = "書き込み済",
   dirtied = "Dirtied",
 }
 
 export class HighlightType {
-  public static NONE = "none"
-  public static DURATION = "duration"
-  public static ROWS = "rows"
-  public static COST = "cost"
+  public static NONE = "なし"
+  public static DURATION = "経過時間"
+  public static ROWS = "行数"
+  public static COST = "コスト"
 }
 
 export enum SortDirection {
@@ -73,7 +73,7 @@ export enum NodeProp {
   SUBPLAN_NAME = "Subplan Name",
   PARALLEL_AWARE = "Parallel Aware",
   WORKERS = "Workers",
-  WORKERS_PLANNED = "Workers Planned",
+  WORKERS_PLANNED = "計画済のワーカー",
   WORKERS_LAUNCHED = "Workers Launched",
   SHARED_HIT_BLOCKS = "Shared Hit Blocks",
   SHARED_READ_BLOCKS = "Shared Read Blocks",
@@ -88,7 +88,7 @@ export enum NodeProp {
   IO_READ_TIME = "I/O Read Time",
   IO_WRITE_TIME = "I/O Write Time",
   OUTPUT = "Output",
-  HEAP_FETCHES = "Heap Fetches",
+  HEAP_FETCHES = "ヒープ フェッチ",
   WAL_RECORDS = "WAL Records",
   WAL_BYTES = "WAL Bytes",
   WAL_FPI = "WAL FPI",
@@ -102,8 +102,8 @@ export enum NodeProp {
   EXCLUSIVE_COST = "*Cost (exclusive)",
   ACTUAL_ROWS_REVISED = "*Actual Rows Revised",
   PLAN_ROWS_REVISED = "*Plan Rows Revised",
-  ROWS_REMOVED_BY_FILTER_REVISED = "*Rows Removed by Filter",
-  ROWS_REMOVED_BY_JOIN_FILTER_REVISED = "*Rows Removed by Join Filter",
+  ROWS_REMOVED_BY_FILTER_REVISED = "*フィルターが除去した行数",
+  ROWS_REMOVED_BY_JOIN_FILTER_REVISED = "*結合フィルターが除去した行数",
 
   PLANNER_ESTIMATE_FACTOR = "*Planner Row Estimate Factor",
   PLANNER_ESTIMATE_DIRECTION = "*Planner Row Estimate Direction",

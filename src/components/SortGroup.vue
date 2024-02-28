@@ -26,7 +26,7 @@ defineProps<Props>()
     </table>
     <table class="table-borderless">
       <tr>
-        <td class="p-0">Memory:</td>
+        <td class="p-0">メモリ:</td>
         <td class="p-0 ps-1">
           Average:
           {{

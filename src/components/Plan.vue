@@ -559,7 +559,7 @@ function averageIO(node: Node) {
             v-if="plan"
           >
             <div class="d-inline-block px-2">
-              Execution time:
+              実行時間:
               <template v-if="!planStats.executionTime">
                 <span class="text-muted">
                   N/A
@@ -578,7 +578,7 @@ function averageIO(node: Node) {
               </template>
             </div>
             <div class="d-inline-block border-start px-2">
-              Planning time:
+              計画時間:
               <template v-if="!planStats.planningTime">
                 <span class="text-muted">
                   N/A
@@ -622,7 +622,7 @@ function averageIO(node: Node) {
               </span>
             </div>
             <div class="d-inline-block border-start px-2 position-relative">
-              <span class="stat-label">Triggers: </span>
+              <span class="stat-label">トリガー: </span>
               <template v-if="planStats.triggers && planStats.triggers.length">
                 <span class="stat-value">
                   <span
@@ -881,7 +881,7 @@ function averageIO(node: Node) {
                     }"
                     v-on:click="viewOptions.highlightType = HighlightType.NONE"
                   >
-                    none
+                    なし
                   </button>
                   <button
                     class="btn btn-outline-secondary"
@@ -894,7 +894,7 @@ function averageIO(node: Node) {
                     "
                     :disabled="!plan.isAnalyze"
                   >
-                    duration
+                    経過時間
                   </button>
                   <button
                     class="btn btn-outline-secondary"
@@ -906,7 +906,7 @@ function averageIO(node: Node) {
                       !rootNode || rootNode[NodeProp.ACTUAL_ROWS] === undefined
                     "
                   >
-                    rows
+                    行数
                   </button>
                   <button
                     class="btn btn-outline-secondary"
@@ -915,7 +915,7 @@ function averageIO(node: Node) {
                     }"
                     v-on:click="viewOptions.highlightType = HighlightType.COST"
                   >
-                    cost
+                    コスト
                   </button>
                 </div>
               </div>

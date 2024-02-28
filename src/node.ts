@@ -218,7 +218,7 @@ export default function useNode(
   })
 
   const filterTooltip = computed((): string => {
-    return rowsRemovedPercentString.value + "% of rows removed by filter"
+    return "フィルターが" + rowsRemovedPercentString.value + "%の行を除去"
   })
 
   const isNeverExecuted = computed((): boolean => {

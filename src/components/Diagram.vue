@@ -355,42 +355,42 @@ function setRowRef(nodeId: number, el: Element) {
             :class="{ active: viewOptions.metric === Metric.time }"
             v-on:click="viewOptions.metric = Metric.time"
           >
-            time
+            時間
           </button>
           <button
             class="btn btn-outline-secondary"
             :class="{ active: viewOptions.metric === Metric.rows }"
             v-on:click="viewOptions.metric = Metric.rows"
           >
-            rows
+            行数
           </button>
           <button
             class="btn btn-outline-secondary"
             :class="{ active: viewOptions.metric === Metric.estimate_factor }"
             v-on:click="viewOptions.metric = Metric.estimate_factor"
           >
-            estimation
+            見積もり
           </button>
           <button
             class="btn btn-outline-secondary"
             :class="{ active: viewOptions.metric === Metric.cost }"
             v-on:click="viewOptions.metric = Metric.cost"
           >
-            cost
+            コスト
           </button>
           <button
             class="btn btn-outline-secondary"
             :class="{ active: viewOptions.metric === Metric.buffers }"
             v-on:click="viewOptions.metric = Metric.buffers"
           >
-            buffers
+            バッファ
           </button>
           <button
             class="btn btn-outline-secondary"
             :class="{ active: viewOptions.metric === Metric.io }"
             v-on:click="viewOptions.metric = Metric.io"
           >
-            IO
+            入出力
           </button>
         </div>
       </div>
@@ -404,7 +404,7 @@ function setRowRef(nodeId: number, el: Element) {
             v-on:click="viewOptions.buffersMetric = BufferLocation.shared"
             :disabled="!plan.planStats.maxBlocks?.[BufferLocation.shared]"
           >
-            shared
+            共有
           </button>
           <button
             class="btn btn-outline-secondary"
@@ -414,7 +414,7 @@ function setRowRef(nodeId: number, el: Element) {
             v-on:click="viewOptions.buffersMetric = BufferLocation.temp"
             :disabled="!plan.planStats.maxBlocks?.[BufferLocation.temp]"
           >
-            temp
+            一時的
           </button>
           <button
             class="btn btn-outline-secondary"
@@ -424,7 +424,7 @@ function setRowRef(nodeId: number, el: Element) {
             v-on:click="viewOptions.buffersMetric = BufferLocation.local"
             :disabled="!plan.planStats.maxBlocks?.[BufferLocation.local]"
           >
-            local
+            ローカル
           </button>
         </div>
       </div>
@@ -438,11 +438,11 @@ function setRowRef(nodeId: number, el: Element) {
             v-if="viewOptions.buffersMetric != BufferLocation.temp"
           >
             <span class="bg-hit rounded"></span>
-            Hit
+            ヒット
           </li>
           <li class="list-inline-item">
             <span class="bg-read"></span>
-            Read
+            読み取り済
           </li>
           <li
             class="list-inline-item"
@@ -453,7 +453,7 @@ function setRowRef(nodeId: number, el: Element) {
           </li>
           <li class="list-inline-item">
             <span class="bg-written"></span>
-            Written
+            書き込み済
           </li>
         </ul>
         <template v-if="viewOptions.metric == Metric.io">

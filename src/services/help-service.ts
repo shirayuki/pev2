@@ -19,35 +19,35 @@ interface INodeDescription {
 }
 
 export const NODE_DESCRIPTIONS: INodeDescription = {
-  LIMIT: "returns a specified number of rows from a record set.",
-  SORT: "sorts a record set based on the specified sort key.",
-  "NESTED LOOP": `merges two record sets by looping through every record in the first set and
-   trying to find a match in the second set. All matching records are returned.`,
-  "MERGE JOIN": `merges two record sets by first sorting them on a <strong>join key</strong>.`,
-  HASH: `generates a hash table from the records in the input recordset. Hash is used by
-   <strong>Hash Join</strong>.`,
-  "HASH JOIN": `joins two record sets by hashing one of them (using a <strong>Hash Scan</strong>).`,
-  AGGREGATE: `groups records together based on a GROUP BY or aggregate function (like <code>sum()</code>).`,
-  HASHAGGREGATE: `groups records together based on a GROUP BY or aggregate function (like sum()). Hash Aggregate uses
-   a hash to first organize the records by a key.`,
-  "SEQ SCAN": `finds relevant records by sequentially scanning the input record set. When reading from a table,
-   Seq Scans (unlike Index Scans) perform a single read operation (only the table is read).`,
-  "INDEX SCAN": `finds relevant records based on an <strong>Index</strong>.
-    Index Scans perform 2 read operations: one to
-    read the index and another to read the actual value from the table.`,
-  "INDEX ONLY SCAN": `finds relevant records based on an <strong>Index</strong>.
-    Index Only Scans perform a single read operation
-    from the index and do not read from the corresponding table.`,
+  LIMIT: "指定された数の行をレコードセットから返します。",
+  SORT: "指定されたソートキーに基づいてレコードセットをソートします。",
+  "NESTED LOOP": `1つ目のレコードセットのすべてのレコードをループし、2つ目のセットで一致するものを見つけようとします。
+    一致するすべてのレコードが返されます。`,
+  "MERGE JOIN": "2つのレコードセットを最初に<strong>結合キー</strong>でソートして結合します。",
+  HASH: `入力レコードセットのレコードからハッシュテーブルを生成します。
+    ハッシュは<strong>ハッシュ結合</strong>で使用されます。`,
+  "HASH JOIN" :"1つのレコードセットをハッシュ化して（<strong>ハッシュスキャン</strong>を使用して）、もう1つのレコードセットを結合します。",
+  AGGREGATE:"レコードを<strong>GROUP BY</strong>や<code>sum()</code>などの集計関数に基づいてグループ化します。",
+  HASHAGGREGATE:`レコードをGROUP BYやsum()などの集計関数に基づいてグループ化します。
+    Hash Aggregateは、最初にハッシュを使用してキーでレコードを整理します。`,
+  "SEQ SCAN": `入力レコードセットを順次スキャンして関連するレコードを見つけます。
+    テーブルから読み取る場合、Seq Scans（インデックススキャンとは異なり）は単一の読み取り操作を実行します（テーブルのみが読み取られます）。`,
+  "INDEX SCAN": `<strong>インデックス</strong>に基づいて関連するレコードを見つけます。
+    インデックススキャンは2つの読み取り操作を行います: 1つ目はインデックスを読み取り、もう1つはテーブルから実際の値を読み取ります。`,
+
+  "INDEX ONLY SCAN": `<strong>インデックス</strong>に基づいて関連するレコードを見つけます。
+    インデックスのみスキャンは、インデックスからの単一の読み取り操作を行い、対応するテーブルからは読み取りません。`,
+
   "BITMAP HEAP SCAN": `searches through the pages returned by the <strong>Bitmap Index Scan</strong>
     for relevant rows.`,
   "BITMAP INDEX SCAN": `uses a <strong>Bitmap Index</strong> (index which uses 1 bit per page)
     to find all relevant pages.
     Results of this node are fed to the <strong>Bitmap Heap Scan</strong>.`,
-  "CTE SCAN": `performs a sequential scan of <strong>Common Table Expression (CTE) query</strong> results. Note that
-    results of a CTE are materialized (calculated and temporarily stored).`,
-  MEMOIZE: `is used to cache the results of the inner side of a nested loop. It avoids executing underlying nodes when the results for the current parameters are already in the cache.`,
-  GATHER: `reads the results of the parallel workers, in an undefined order.`,
-  "GATHER MERGE": `reads the results of the parallel workers, preserving any ordering.`,
+  "CTE SCAN": `<strong>共通テーブル式（CTE）クエリ</strong>の結果を順次スキャンします。
+    CTEの結果は実体化され（計算されて一時的に保存されます）、その後にスキャンされます。`,
+  MEMOIZE: "内側のネストされたループの結果をキャッシュするために使用されます。現在のパラメーターの結果がすでにキャッシュにある場合、基礎となるノードの実行を回避します。",
+  GATHER: "並列ワーカーの結果を未定義の順序で読み取ります。",
+  "GATHER MERGE": "並列ワーカーの結果を、任意の順序を保持して読み取ります。"
 }
 
 interface IHelpMessage {
